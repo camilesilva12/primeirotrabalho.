@@ -1,92 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enrolados - O Filme</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg">
+
   <style>
+    /* Fundo com gradiente rosa bebê e roxo claro */
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f8bbd0 50%, #d1c4e9 50%);
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #f8bbd0, #ce93d8);
+      color: #4a148c;
+      overflow-x: hidden;
     }
 
-    .banner {
+    /* Efeito de brilho no fundo */
+    .glow-background {
+      position: fixed;
+      top: 0; left: 0;
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.2;
+      animation: sparkle 4s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 50px; }
     }
 
     header {
-      background-color: #d1c4e9;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
+      background-color: rgba(74, 20, 140, 0.8);
+      color: white;
+      box-shadow: 0 0 10px #ba68c8;
     }
 
-    header h1 {
-      margin: 0;
-      color: #4a148c;
-    }
-
-    nav {
-      margin-top: 10px;
+    header img {
+      width: 150px;
     }
 
     nav a {
-      text-decoration: none;
-      color: #4a148c;
       margin: 0 15px;
+      color: white;
+      text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px gold;
     }
 
     section {
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    #home {
-      background-color: #f8bbd0;
+    h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      transition: text-shadow 0.4s ease;
     }
 
-    #informacoes {
-      background-color: #d1c4e9;
-    }
-
-    #curiosidades {
-      background-color: #f3e5f5;
-    }
-
-    #imagens, #videos {
-      background-color: #f8bbd0;
+    h2:hover {
+      text-shadow: 0 0 20px #ffffff;
     }
 
     .content img, .content video {
-      width: 90%;
-      max-width: 600px;
+      max-width: 90%;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     }
 
-    h2 {
-      color: #6a1b9a;
-    }
-
-    ul {
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto;
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(74, 20, 140, 0.7);
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Imagem com arquivo local -->
-  <img src="rapunzel.webp" alt="Banner de Enrolados" class="banner" />
+  <!-- Fundo com brilhos -->
+  <div class="glow-background"></div>
 
   <header>
-    <h1>Enrolados - O Filme</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" alt="Logo Enrolados">
     <nav>
       <a href="#home">Home</a>
       <a href="#informacoes">Informações</a>
@@ -97,31 +105,28 @@
   </header>
 
   <section id="home">
-    <h2>Bem-vindo!</h2>
-    <p>Descubra o mundo mágico de Rapunzel e seus amigos.</p>
+    <h2>Bem-vindo ao mundo de Enrolados!</h2>
+    <p>Explore a aventura encantadora de Rapunzel e Flynn Rider.</p>
   </section>
 
   <section id="informacoes">
     <h2>Informações</h2>
-    <p><strong>Nome:</strong> Rapunzel</p>
-    <p><strong>Lançamento:</strong> 2010</p>
-    <p><strong>Gênero:</strong> Animação, Aventura, Comédia</p>
-    <p><strong>Sinopse:</strong> A história de uma princesa de cabelos mágicos que embarca numa grande aventura ao lado de Flynn Rider.</p>
+    <p>Enrolados é um filme mágico da Disney lançado em 2010, que conta a história de Rapunzel e seu desejo de liberdade.</p>
   </section>
 
   <section id="curiosidades">
     <h2>Curiosidades</h2>
-    <ul>
-      <li>Rapunzel tem 21 metros de cabelo.</li>
-      <li>O filme foi o 50º longa da Disney.</li>
-      <li>A música "I See The Light" foi indicada ao Oscar.</li>
+    <ul style="list-style: none; padding: 0;">
+      <li>✨ Rapunzel tem 21 metros de cabelo mágico!</li>
+      <li>✨ É o 50º longa animado da Disney.</li>
+      <li>✨ A música "I See The Light" foi indicada ao Oscar.</li>
     </ul>
   </section>
 
   <section id="imagens">
-    <h2>Imagem</h2>
+    <h2>Imagens</h2>
     <div class="content">
-      <img src="rapunzel.webp" alt="Imagem de Rapunzel" />
+      <img src="rapunzel.webp" alt="Imagem de Rapunzel">
     </div>
   </section>
 
@@ -129,12 +134,18 @@
     <h2>Vídeo</h2>
     <div class="content">
       <video controls>
-        <source src="rapunzel video.mp4" type="video/mp4" />
-        Seu navegador não suporta o vídeo.
+        <source src="rapunzel video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
       </video>
     </div>
   </section>
+
+  <footer>
+    <p>Site feito com 💜 e magia por você!</p>
+  </footer>
+
 </body>
 </html>
 
-     
+      
+  
