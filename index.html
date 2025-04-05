@@ -1,151 +1,159 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enrolados - O Filme</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrolados - Mundo Mágico</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/57/Flaticon_logo.png" type="image/png">
 
-  <style>
-    /* Fundo com gradiente rosa bebê e roxo claro */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to right, #f8bbd0, #ce93d8);
-      color: #4a148c;
-      overflow-x: hidden;
-    }
+    <style>
+        /* Fundo gradiente metade rosa bebê, metade roxo claro */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #fbb1d4 50%, #c59ff9 50%);
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    /* Efeito de brilho no fundo */
-    .glow-background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background-image: radial-gradient(white 1px, transparent 1px);
-      background-size: 50px 50px;
-      opacity: 0.2;
-      animation: sparkle 4s linear infinite;
-    }
+        /* Estrelas caindo */
+        @keyframes estrela {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
 
-    @keyframes sparkle {
-      0% { background-position: 0 0; }
-      100% { background-position: 50px 50px; }
-    }
+        .star {
+            position: fixed;
+            top: -50px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            width: 5px;
+            height: 5px;
+            animation: estrela linear infinite;
+            z-index: 0;
+        }
 
-    header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(74, 20, 140, 0.8);
-      color: white;
-      box-shadow: 0 0 10px #ba68c8;
-    }
+        /* Header */
+        header {
+            background-color: #9b59b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-    header img {
-      width: 150px;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
+        section {
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-    nav a:hover {
-      text-shadow: 0 0 10px gold;
-    }
+        h2 {
+            animation: flutuar 4s ease-in-out infinite;
+        }
 
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
 
-    h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      transition: text-shadow 0.4s ease;
-    }
+        .content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
 
-    h2:hover {
-      text-shadow: 0 0 20px #ffffff;
-    }
+        /* Rapunzel animada */
+        @keyframes cabeloRapunzel {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(1deg); }
+        }
 
-    .content img, .content video {
-      max-width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    }
+        .rapunzel-img {
+            animation: aparecerRapunzel 2s ease-out, cabeloRapunzel 3s ease-in-out infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            width: 300px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(74, 20, 140, 0.7);
-      color: white;
-      margin-top: 30px;
-    }
-  </style>
+        /* Flynn com efeito */
+        @keyframes aparecerFlynn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .flynn-img {
+            animation: aparecerFlynn 2s ease;
+            border-radius: 10px;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .flynn-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Fundo com brilhos -->
-  <div class="glow-background"></div>
+    <!-- Estrelas mágicas -->
+    <div class="star" style="left: 10%; animation-duration: 5s;"></div>
+    <div class="star" style="left: 30%; animation-duration: 7s;"></div>
+    <div class="star" style="left: 50%; animation-duration: 6s;"></div>
+    <div class="star" style="left: 70%; animation-duration: 8s;"></div>
+    <div class="star" style="left: 90%; animation-duration: 5.5s;"></div>
 
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" alt="Logo Enrolados">
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#informacoes">Informações</a>
-      <a href="#curiosidades">Curiosidades</a>
-      <a href="#imagens">Imagens</a>
-      <a href="#videos">Vídeos</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Bem-vindo ao mundo encantado de Enrolados!</h1>
+        <nav>
+            <a href="#informacoes">Informações</a>
+            <a href="#imagens">Personagens</a>
+        </nav>
+    </header>
 
-  <section id="home">
-    <h2>Bem-vindo ao mundo de Enrolados!</h2>
-    <p>Explore a aventura encantadora de Rapunzel e Flynn Rider.</p>
-  </section>
+    <section id="informacoes">
+        <h2>Sobre o Filme</h2>
+        <p><strong>Nome:</strong> Rapunzel</p>
+        <p><strong>Ano de Lançamento:</strong> 2010</p>
+        <p><strong>Gênero:</strong> Animação, Aventura, Comédia, Musical</p>
+        <p><strong>Sinopse:</strong> Rapunzel, uma jovem com cabelos mágicos, vive presa em uma torre. Ao conhecer Flynn Rider, ela embarca numa aventura para descobrir a verdade sobre seu passado.</p>
+    </section>
 
-  <section id="informacoes">
-    <h2>Informações</h2>
-    <p>Enrolados é um filme mágico da Disney lançado em 2010, que conta a história de Rapunzel e seu desejo de liberdade.</p>
-  </section>
+    <section id="imagens">
+        <h2>Personagens Principais</h2>
+        <div class="content">
+            <!-- Rapunzel -->
+            <img class="rapunzel-img" src="rapunzel.webp" alt="Rapunzel animada">
 
-  <section id="curiosidades">
-    <h2>Curiosidades</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>✨ Rapunzel tem 21 metros de cabelo mágico!</li>
-      <li>✨ É o 50º longa animado da Disney.</li>
-      <li>✨ A música "I See The Light" foi indicada ao Oscar.</li>
-    </ul>
-  </section>
-
-  <section id="imagens">
-    <h2>Imagens</h2>
-    <div class="content">
-      <img src="rapunzel.webp" alt="Imagem de Rapunzel">
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>Vídeo</h2>
-    <div class="content">
-      <video controls>
-        <source src="rapunzel video.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-    </div>
-  </section>
-
-  <footer>
-    <p>Site feito com 💜 e magia por você!</p>
-  </footer>
+            <!-- Flynn -->
+            <img class="flynn-img" src="https://static.wikia.nocookie.net/disney/images/f/f5/Flynn_Rider_pose.png" alt="Flynn Rider com efeito">
+        </div>
+    </section>
 
 </body>
 </html>
-
-      
-  
