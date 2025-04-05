@@ -4,88 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enrolados - O Filme</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/57/Flaticon_logo.png" type="image/png" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fdf6f9;
+      background-color: #fff0f5;
       color: #333;
+      margin: 0;
+      padding: 0;
     }
 
     header {
-      background-color: #6a1b9a; /* Roxo escuro */
-      padding: 10px 0;
+      background-color: #d1c4e9; /* Roxo fraco */
+      padding: 20px;
       text-align: center;
     }
 
-    header nav a {
-      color: #fff8f9;
-      text-decoration: none;
-      margin: 0 15px;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+    header h1 {
+      margin: 0;
+      color: #4a148c;
     }
 
-    header nav a:hover {
-      background-color: #8e24aa; /* Roxo médio */
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4a148c;
+      margin: 0 15px;
+      font-weight: bold;
     }
 
     section {
-      padding: 40px 20px;
-      margin: 20px 0;
-    }
-
-    img.logo {
-      width: 120px;
-    }
-
-    .content img,
-    .content video {
-      width: 100%;
-      max-width: 700px;
-      display: block;
-      margin: 20px auto;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
+      text-align: center;
     }
 
     #home {
-      background-color: #e91e63; /* Rosa forte */
-      text-align: center;
-      color: white;
+      background-color: #f8bbd0; /* Rosa bebê */
     }
 
     #informacoes {
-      background-color: #8e24aa; /* Roxo médio */
-      color: #fff;
+      background-color: #d1c4e9;
     }
 
     #curiosidades {
-      background-color: #ab47bc; /* Roxo mais claro */
-      color: #fff;
+      background-color: #f3e5f5;
     }
 
-    #imagens {
-      background-color: #ec407a; /* Rosa mais claro */
+    #imagens, #videos {
+      background-color: #f8bbd0;
     }
 
-    #videos {
-      background-color: #f06292; /* Rosa claro */
+    .content img, .content video {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin: 20px auto;
     }
 
-    h1, h2 {
-      color: #4a0072;
+    h2 {
+      color: #6a1b9a;
     }
 
     ul {
-      padding-left: 20px;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
   <header>
-    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" alt="Logo de Enrolados" />
+    <h1>Enrolados - O Filme</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#informacoes">Informações</a>
@@ -96,33 +88,31 @@
   </header>
 
   <section id="home">
-    <h1>Bem-vindo ao nosso site sobre Enrolados!</h1>
-    <p>Aqui você vai mergulhar no mundo divertido e cheio de aventuras da Rapunzel, Flynn Rider e de sua mãe Gothel.</p>
+    <h2>Bem-vindo!</h2>
+    <p>Descubra o mundo mágico de Rapunzel e seus amigos.</p>
   </section>
 
   <section id="informacoes">
-    <h2>Informações sobre Enrolados</h2>
+    <h2>Informações</h2>
     <p><strong>Nome:</strong> Rapunzel</p>
-    <p><strong>Ano de Lançamento:</strong> 2010</p>
-    <p><strong>Gênero:</strong> Animação, Aventura, Comédia, Família, Musical</p>
-    <p><strong>Sinopse:</strong> Rapunzel é uma princesa que foi sequestrada quando bebê e levada para uma torre isolada. Ela tem o poder mágico de curar com seus longos cabelos dourados. Quando conhece Flynn Rider, um ladrão carismático, eles embarcam em uma aventura para descobrir a verdade sobre sua origem e encontrar sua liberdade.</p>
-    <p><strong>Personagens principais:</strong> Rapunzel, Flynn Rider, Maximus, Pascal, Gothel.</p>
+    <p><strong>Lançamento:</strong> 2010</p>
+    <p><strong>Gênero:</strong> Animação, Aventura, Comédia</p>
+    <p><strong>Sinopse:</strong> A história de uma princesa de cabelos mágicos que embarca numa grande aventura ao lado de Flynn Rider.</p>
   </section>
 
   <section id="curiosidades">
-    <h2>Curiosidades sobre Enrolados</h2>
+    <h2>Curiosidades</h2>
     <ul>
-      <li>Rapunzel tem 21 metros de cabelo!</li>
-      <li>Foi o 50º filme de animação da Disney.</li>
-      <li>"I See the Light" foi indicada ao Oscar.</li>
-      <li>Rapunzel representa liberdade e coragem.</li>
+      <li>Rapunzel tem 21 metros de cabelo.</li>
+      <li>O filme foi o 50º longa da Disney.</li>
+      <li>A música "I See The Light" foi indicada ao Oscar.</li>
     </ul>
   </section>
 
   <section id="imagens">
     <h2>Imagem</h2>
     <div class="content">
-      <img src="rapunzel.webp" alt="Rapunzel e Flynn no barco" />
+      <img src="rapunzel.webp" alt="Imagem de Rapunzel" />
     </div>
   </section>
 
@@ -131,7 +121,7 @@
     <div class="content">
       <video controls>
         <source src="rapunzel video.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo HTML5.
+        Seu navegador não suporta o vídeo.
       </video>
     </div>
   </section>
@@ -139,5 +129,5 @@
 </html>
 
 
- 
- 
+    
+   
