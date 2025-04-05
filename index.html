@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enrolados - O Filme</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg"/>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" />
 
   <style>
     body {
@@ -15,29 +15,17 @@
       overflow-x: hidden;
     }
 
-    /* Brilho e estrelas */
-    .glow-background, .stars {
+    /* Efeito de brilho */
+    .glow-background {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 0;
-    }
-
-    .glow-background {
       background-image: radial-gradient(white 1px, transparent 1px);
       background-size: 50px 50px;
       opacity: 0.2;
       animation: sparkle 4s linear infinite;
-    }
-
-    .stars {
-      background: url('https://media.tenor.com/yheo1GGu3FwAAAAC/space-stars.gif') repeat;
-      background-size: cover;
-      opacity: 0.1;
-      animation: starsMove 20s linear infinite;
     }
 
     @keyframes sparkle {
@@ -45,18 +33,12 @@
       100% { background-position: 50px 50px; }
     }
 
-    @keyframes starsMove {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 1000px; }
-    }
-
     header {
       text-align: center;
       padding: 20px;
       background-color: rgba(74, 20, 140, 0.8);
       color: white;
-      z-index: 2;
-      position: relative;
+      box-shadow: 0 0 10px #ba68c8;
     }
 
     header img {
@@ -68,6 +50,7 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
     }
 
     nav a:hover {
@@ -77,8 +60,16 @@
     section {
       padding: 40px 20px;
       text-align: center;
-      z-index: 2;
-      position: relative;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      transition: text-shadow 0.4s ease;
+    }
+
+    h2:hover {
+      text-shadow: 0 0 20px #ffffff;
     }
 
     .content img, .content video {
@@ -87,43 +78,56 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
     }
 
+    /* Seção de personagens */
+    #personagens {
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 50px 20px;
+    }
+
+    .personagens-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 10px;
+      width: 150px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       background-color: rgba(74, 20, 140, 0.7);
       color: white;
-      z-index: 2;
-      position: relative;
-    }
-
-    /* Animação de Rapunzel mexendo o cabelo */
-    .rapunzel-img {
-      width: 300px;
-      animation: cabelo 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes cabelo {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(2deg); }
-    }
-
-    /* Flynn com fade-in */
-    .flynn-img {
-      width: 250px;
-      opacity: 0;
-      animation: aparecer 4s ease-in forwards;
-      animation-delay: 2s;
-    }
-
-    @keyframes aparecer {
-      to { opacity: 1; transform: translateY(0); }
-      from { opacity: 0; transform: translateY(30px); }
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <div class="stars"></div>
   <div class="glow-background"></div>
 
   <header>
@@ -132,6 +136,7 @@
       <a href="#home">Home</a>
       <a href="#informacoes">Informações</a>
       <a href="#curiosidades">Curiosidades</a>
+      <a href="#personagens">Personagens</a>
       <a href="#imagens">Imagens</a>
       <a href="#videos">Vídeos</a>
     </nav>
@@ -156,12 +161,32 @@
     </ul>
   </section>
 
+  <section id="personagens">
+    <h2>Personagens</h2>
+    <div class="personagens-container">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/7/79/Rapunzel_-_Enrolados.png" alt="Rapunzel" />
+        <p>Rapunzel</p>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/b/b0/Flynn_Rider.png" alt="Flynn Rider" />
+        <p>Flynn Rider</p>
+      </div>
+      <div class="card">
+        <img src="https://static.wikia.nocookie.net/disney/images/f/f4/Pascal_Rapunzel.png" alt="Pascal" />
+        <p>Pascal</p>
+      </div>
+      <div class="card">
+        <img src="https://static.wikia.nocookie.net/disney/images/0/06/Maximus_Enrolados.png" alt="Maximus" />
+        <p>Maximus</p>
+      </div>
+    </div>
+  </section>
+
   <section id="imagens">
     <h2>Imagens</h2>
     <div class="content">
-      <img src="https://static.wikia.nocookie.net/disney/images/7/75/Rapunzel_Tangled.png" alt="Rapunzel animada" class="rapunzel-img">
-      <br><br>
-      <img src="https://static.wikia.nocookie.net/disney/images/f/fc/Flynn_Rider_pose.png" alt="Flynn animado" class="flynn-img">
+      <img src="rapunzel.webp" alt="Imagem de Rapunzel" />
     </div>
   </section>
 
@@ -178,6 +203,7 @@
   <footer>
     <p>Site feito com 💜 e magia por você!</p>
   </footer>
+
 </body>
 </html>
 
