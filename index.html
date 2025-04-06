@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -124,11 +124,79 @@
       color: white;
       margin-top: 30px;
     }
+
+    /* Lanternas mágicas */
+    .lanternas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .lanterna {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      background: radial-gradient(ellipse at center, #ffe0b2 0%, #ffcc80 100%);
+      border-radius: 10px 10px 5px 5px;
+      opacity: 0.8;
+      animation: flutuar 12s linear infinite, piscar 3s ease-in-out infinite alternate;
+    }
+
+    .lanterna::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      box-shadow: 0 0 8px gold;
+    }
+
+    @keyframes flutuar {
+      0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20px) rotate(10deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes piscar {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.5); }
+    }
+
+    .lanterna:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .lanterna:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .lanterna:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .lanterna:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .lanterna:nth-child(5) { left: 90%; animation-delay: 3s; }
   </style>
 </head>
 <body>
 
   <div class="glow-background"></div>
+
+  <div class="lanternas">
+    <div class="lanterna"></div>
+    <div class="lanterna"></div>
+    <div class="lanterna"></div>
+    <div class="lanterna"></div>
+    <div class="lanterna"></div>
+  </div>
 
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" alt="Logo Enrolados" />
@@ -195,7 +263,6 @@
     <div class="content">
       <video controls>
         <source src="rapunzel video.mp4" type="video/mp4" />
-       
       </video>
     </div>
   </section>
