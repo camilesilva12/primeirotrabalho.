@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enrolados - O Filme</title>
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tangled_logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Great Vibes', cursive;
       background: linear-gradient(to right, #f8bbd0, #ce93d8);
       color: #4a148c;
       overflow-x: hidden;
+      cursor: url('https://cur.cursors-4u.net/others/oth-1/oth92.cur'), auto;
     }
 
     .sparkle {
@@ -29,6 +35,7 @@
       10% { opacity: 1; }
       100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
     }
+
     .sparkle span:nth-child(1) { left: 10%; animation-delay: 0s; }
     .sparkle span:nth-child(2) { left: 20%; animation-delay: 2s; }
     .sparkle span:nth-child(3) { left: 35%; animation-delay: 4s; }
@@ -56,6 +63,7 @@
 
     nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
     }
@@ -77,17 +85,25 @@
     }
 
     h2 {
-      font-size: 2em;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       margin-bottom: 10px;
       transition: text-shadow 0.4s;
     }
 
-    h2:hover { text-shadow: 0 0 20px #fff; }
+    h2:hover {
+      text-shadow: 0 0 20px #fff;
+    }
 
-    .content img, .content video, .content iframe {
-      max-width: 90%;
+    .content img, .content iframe {
+      max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
 
     #personagens {
@@ -109,6 +125,21 @@
       padding: 10px;
       width: 150px;
       transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: aparecer 1s forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .card:hover {
@@ -116,45 +147,32 @@
       box-shadow: 0 0 20px rgba(255,255,255,0.6);
     }
 
-    .card img { width: 100%; border-radius: 10px; }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-    .card p { margin-top: 10px; font-weight: bold; color: #6a1b9a; }
+    .card p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #6a1b9a;
+    }
 
-    footer { margin-top: 30px; text-align: center; }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #4a148c;
+      font-size: 1.2rem;
+    }
 
-    /* Responsividade com centralização */
     @media screen and (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
       nav {
         flex-direction: column;
-        align-items: center;
         gap: 10px;
       }
-
-      section {
-        padding: 30px 15px;
-        text-align: center;
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
       .personagens-container {
         flex-direction: column;
         align-items: center;
-      }
-
-      .card {
-        width: 80%;
-        max-width: 250px;
       }
     }
   </style>
@@ -201,19 +219,19 @@
     <h2>Personagens</h2>
     <div class="personagens-container">
       <div class="card">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tTw2xsSgFA_kpTym1p4WU7raHlHBWwWn1gjh40b6SssZXqKLUPVWJRucyTP9-3Cjh9aUCB4_GX-sTCiNA828SPog9taHKlTLuefZapk" />
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tTw2xsSgFA_kpTym1p4WU7raHlHBWwWn1gjh40b6SssZXqKLUPVWJRucyTP9-3Cjh9aUCB4_GX-sTCiNA828SPog9taHKlTLuefZapk" alt="Rapunzel" />
         <p>Rapunzel</p>
       </div>
       <div class="card">
-        <img src="https://tse2.mm.bing.net/th?id=OIP.sqJLsoOnS2ttIqP5OqwDdAHaHa&pid=Api&P=0&h=180" />
+        <img src="https://tse2.mm.bing.net/th?id=OIP.sqJLsoOnS2ttIqP5OqwDdAHaHa&pid=Api&P=0&h=180" alt="Flynn Rider" />
         <p>Flynn Rider</p>
       </div>
       <div class="card">
-        <img src="http://fc03.deviantart.net/fs71/f/2011/051/5/e/pascal_doll_by_redhotkaka-d3a0mts.png" />
+        <img src="http://fc03.deviantart.net/fs71/f/2011/051/5/e/pascal_doll_by_redhotkaka-d3a0mts.png" alt="Pascal" />
         <p>Pascal</p>
       </div>
       <div class="card">
-        <img src="https://i.pinimg.com/originals/39/88/59/398859d5da26380822e5616ab998e1f4.jpg" />
+        <img src="https://i.pinimg.com/originals/39/88/59/398859d5da26380822e5616ab998e1f4.jpg" alt="Maximus" />
         <p>Maximus</p>
       </div>
     </div>
@@ -229,13 +247,8 @@
   <section id="videos">
     <h2>Vídeo</h2>
     <div class="content">
-      <iframe width="720" height="405"
-        src="https://www.youtube.com/embed/Nj-Y37_Av2E"
-        title="Vídeo do YouTube - Enrolados"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe src="https://www.youtube.com/embed/Nj-Y37_Av2E" title="Vídeo do YouTube - Enrolados"
+        frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
