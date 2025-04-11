@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -46,6 +46,7 @@
       color: white;
       background-color: rgba(74, 20, 140, 0.8);
       box-shadow: 0 0 10px #ba68c8;
+      text-align: center;
     }
 
     header img {
@@ -119,29 +120,41 @@
 
     .card p { margin-top: 10px; font-weight: bold; color: #6a1b9a; }
 
-    footer {
-      margin-top: 30px;
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(74, 20, 140, 0.2);
-      font-weight: bold;
-    }
+    footer { margin-top: 30px; text-align: center; }
 
-    /* Responsividade */
+    /* Responsividade com centralização */
     @media screen and (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: center;
+        text-align: center;
       }
+
       nav {
         flex-direction: column;
+        align-items: center;
         gap: 10px;
       }
+
+      section {
+        padding: 30px 15px;
+        text-align: center;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .personagens-container {
         flex-direction: column;
+        align-items: center;
       }
-      .content img, .content iframe {
-        max-width: 100%;
+
+      .card {
+        width: 80%;
+        max-width: 250px;
       }
     }
   </style>
@@ -167,7 +180,7 @@
 
   <section id="home">
     <h2>Bem-vindo ao mundo de Enrolados!</h2>
-    <p>Explore a aventura encantadora de Rapunzel e Flynn Rider.</p>
+    <p>Explore a aventura encantadora de Rapunzel e José.</p>
   </section>
 
   <section id="informacoes">
@@ -188,19 +201,19 @@
     <h2>Personagens</h2>
     <div class="personagens-container">
       <div class="card">
-        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tTw2xsSgFA_kpTym1p4WU7raHlHBWwWn1gjh40b6SssZXqKLUPVWJRucyTP9-3Cjh9aUCB4_GX-sTCiNA828SPog9taHKlTLuefZapk" alt="Rapunzel" />
+        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tTw2xsSgFA_kpTym1p4WU7raHlHBWwWn1gjh40b6SssZXqKLUPVWJRucyTP9-3Cjh9aUCB4_GX-sTCiNA828SPog9taHKlTLuefZapk" />
         <p>Rapunzel</p>
       </div>
       <div class="card">
-        <img src="https://tse2.mm.bing.net/th?id=OIP.sqJLsoOnS2ttIqP5OqwDdAHaHa&pid=Api&P=0&h=180" alt="Flynn Rider" />
+        <img src="https://tse2.mm.bing.net/th?id=OIP.sqJLsoOnS2ttIqP5OqwDdAHaHa&pid=Api&P=0&h=180" />
         <p>Flynn Rider</p>
       </div>
       <div class="card">
-        <img src="http://fc03.deviantart.net/fs71/f/2011/051/5/e/pascal_doll_by_redhotkaka-d3a0mts.png" alt="Pascal" />
+        <img src="http://fc03.deviantart.net/fs71/f/2011/051/5/e/pascal_doll_by_redhotkaka-d3a0mts.png" />
         <p>Pascal</p>
       </div>
       <div class="card">
-        <img src="https://i.pinimg.com/originals/39/88/59/398859d5da26380822e5616ab998e1f4.jpg" alt="Maximus" />
+        <img src="https://i.pinimg.com/originals/39/88/59/398859d5da26380822e5616ab998e1f4.jpg" />
         <p>Maximus</p>
       </div>
     </div>
@@ -218,7 +231,7 @@
     <div class="content">
       <iframe width="720" height="405"
         src="https://www.youtube.com/embed/Nj-Y37_Av2E"
-        title="Enrolados - Vídeo"
+        title="Vídeo do YouTube - Enrolados"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -231,5 +244,3 @@
   </footer>
 </body>
 </html>
-
-
