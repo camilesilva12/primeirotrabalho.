@@ -37,23 +37,39 @@
     .sparkle span:nth-child(6) { left: 80%; animation-delay: 5s; }
     .sparkle span:nth-child(7) { left: 90%; animation-delay: 6s; }
 
-    header, footer {
-      text-align: center;
+    /* Alinhamento do cabeçalho */
+    header {
+      display: flex;
+      flex-direction: column; /* Logo acima do menu */
+      justify-content: center;
+      align-items: center;
       padding: 20px;
       color: white;
-      background-color: rgba(74,20,140,0.8);
+      background-color: rgba(74, 20, 140, 0.8);
       box-shadow: 0 0 10px #ba68c8;
     }
 
-    header img { width: 150px; }
+    header img {
+      width: 150px;
+      margin-bottom: 10px; /* Espaço entre o logo e o menu */
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
-    nav a:hover { text-shadow: 0 0 10px gold; }
+
+    nav a:hover {
+      text-shadow: 0 0 10px gold;
+    }
 
     section {
       padding: 40px 20px;
@@ -133,7 +149,7 @@
     <h2>Curiosidades</h2>
     <ul style="list-style:none;padding:0;">
       <li>✨ Rapunzel tem 21 metros de cabelo mágico!</li>
-      <li>✨ a rapunzel tem o poder de curar e rejuvenescer as pessoas cantando.</li>
+      <li>✨ A Rapunzel tem o poder de curar e rejuvenescer as pessoas cantando.</li>
       <li>✨ A música "I See The Light" foi indicada ao Oscar.</li>
     </ul>
   </section>
@@ -185,8 +201,3 @@
   </footer>
 </body>
 </html>
-
- 
-
-
-    
